@@ -1,0 +1,176 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient background */
+    color: #333;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Resume Container */
+.resume-container {
+    width: 80%;
+    max-width: 850px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    z-index: 1;
+    background-image: url('pattern.png'); /* Add a subtle background pattern */
+    background-size: cover;
+}
+
+.resume-container:hover {
+    transform: scale(1.03); /* Subtle hover animation */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Header - Personal Information */
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #ff8a00; /* Orange border */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.4s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: rotate(360deg); /* Rotating animation on hover */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0072ff; /* Blue text */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: #ff8a00; /* Accent color for headings */
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00c6ff;
+    padding-bottom: 5px;
+    display: inline-block;
+    animation: slideIn 1.2s ease-out;
+}
+
+p, li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Bullet Point Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: "✓ "; /* Custom bullet point */
+    color: #00c6ff; /* Vibrant blue */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(45deg, #ff8a00, #0072ff);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.4s, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(1px) scale(1.02);
+    background: linear-gradient(45deg, #ff8a00, #ff4800);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .resume-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
